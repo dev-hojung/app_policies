@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strike Log Privacy Policy</title>
+<meta name="description" content="Privacy policy for the Strike Log app (com.strikelog.app).">
+<style>
+  :root { --fg:#1d1f23; --muted:#5c6370; --line:#e3e6eb; --bg:#ffffff; --card:#f6f7f9; --accent:#1f5fd6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg:#e8eaed; --muted:#a0a7b4; --line:#30343b; --bg:#15171a; --card:#1e2125; --accent:#7aa7ff; }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; overflow-wrap:anywhere; }
+  main { max-width:760px; margin:0 auto; padding:28px 20px 48px; }
+  h1 { font-size:1.6rem; line-height:1.3; margin:0 0 6px; }
+  h2 { font-size:1.2rem; margin:36px 0 8px; padding-top:8px; border-top:1px solid var(--line); }
+  h3 { font-size:1.02rem; margin:20px 0 6px; }
+  .meta { color:var(--muted); font-size:.92rem; margin:0 0 14px; }
+  nav.lang { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+  nav.lang a { display:inline-block; padding:6px 14px; border:1px solid var(--line); border-radius:999px; text-decoration:none; background:var(--card); }
+  .langhead { font-size:1.35rem; margin:40px 0 0; }
+  a { color:var(--accent); }
+  ul { padding-left:1.2em; }
+  li { margin:4px 0; }
+  .table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:8px 0 12px; border:1px solid var(--line); border-radius:8px; }
+  table { border-collapse:collapse; width:100%; min-width:520px; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:8px 10px; border-bottom:1px solid var(--line); }
+  th { background:var(--card); }
+  tr:last-child td { border-bottom:0; }
+  .box { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 16px; margin:12px 0; }
+  footer { margin-top:40px; border-top:1px solid var(--line); padding-top:16px; font-size:.92rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Strike Log Privacy Policy</h1>
+  <p class="meta">Effective date: [대표 확인 필요: 시행일] · Last updated: [대표 확인 필요: 시행일]</p>
+  <nav class="lang" aria-label="Language">
+    <a href="#en">English</a>
+    <a href="#ko" lang="ko">한국어</a>
+  </nav>
+
+  <!-- ============================ ENGLISH ============================ -->
+  <section id="en" lang="en">
+    <h2 class="langhead">English</h2>
+
+    <h2>1. Who we are</h2>
+    <p>This policy applies to the <strong>Strike Log</strong> mobile app (Android package <code>com.strikelog.app</code>, and the iOS version) and its server <code>api.strikelog.xyz</code>. The app is operated by [대표 확인 필요: 개발자명] ("we", "us"). Strike Log lets you record bowling scores, view statistics and share scores with clubs in real time.</p>
+
+    <h2>2. Summary</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>What we collect</th><th>Why</th><th>Shared with</th></tr></thead>
+      <tbody>
+        <tr><td>Account: email, password (hashed), nickname, optional profile image</td><td>Sign-in and your profile</td><td>Server hosting provider (processor); Resend (sends verification emails); nickname and profile image are visible to club members</td></tr>
+        <tr><td>Bowling records, clubs, badges</td><td>App features</td><td>Server hosting provider; club scores are visible to club members</td></tr>
+        <tr><td>Inquiries you send in the app</td><td>Answering you</td><td>Server hosting provider; Discord (internal notification to us)</td></tr>
+        <tr><td>Push token</td><td>Notifications</td><td>Google (Firebase Cloud Messaging)</td></tr>
+        <tr><td>Advertising ID, IP address, device and ad interaction data</td><td>Ads</td><td>Google (AdMob)</td></tr>
+        <tr><td>Crash and error reports, device and app info</td><td>Fixing bugs</td><td>Sentry</td></tr>
+      </tbody>
+    </table></div>
+    <p>We do not sell your personal information.</p>
+
+    <h2>3. Data we collect and why</h2>
+    <h3>3.1 Information you provide</h3>
+    <ul>
+      <li><strong>Account:</strong> email address, password (stored only as a one-way hash), nickname.</li>
+      <li><strong>Email verification:</strong> when you sign up or reset your password, we send a 6-digit one-time code to your email through Resend. We store your email address, the code, whether it was verified and the time it was created. A code expires after 5 minutes. Every verification record, used or not, is deleted automatically within 24 hours of its creation, and all records for your email are deleted when you delete your account.</li>
+      <li><strong>Profile image (optional):</strong> a photo you choose from your device. It is compressed in the app and stored on our server.</li>
+      <li><strong>Bowling records:</strong> scores and frames, play date, bowling alley name you enter, series, club games and rankings, badges, challenges and daily attendance.</li>
+      <li><strong>Clubs:</strong> clubs you create or join, join requests, role (owner/staff/member), announcements, club events and participation.</li>
+      <li><strong>Inquiries:</strong> category, subject, message and an optional reply email when you contact us in the app. A copy of the inquiry, with your user ID, nickname, a partly hidden account email (for example, "bo***@gmail.com") and the reply email you entered, is posted to our private Discord channel so we can answer quickly.</li>
+    </ul>
+    <h3>3.2 Information collected automatically</h3>
+    <ul>
+      <li><strong>Push token:</strong> Firebase Cloud Messaging token and platform (Android/iOS), to send notifications such as club game alerts, new bests and badges. A history of notifications sent to you is stored on our server.</li>
+      <li><strong>Advertising data:</strong> collected by Google AdMob — see section 5.</li>
+      <li><strong>Crash and error reports:</strong> collected by Sentry when the app crashes or an error occurs: error details, device model, OS and app version, and performance data. We do not attach your account to these reports.</li>
+    </ul>
+    <h3>3.3 Information visible to other users</h3>
+    <p>When you join a club, other members of that club can see your <strong>nickname, profile image, club game scores, rankings and participation</strong>. Real-time club games share scores with players in the same game room.</p>
+
+    <h2>4. Third-party services</h2>
+    <ul>
+      <li>Google AdMob and User Messaging Platform (ads and consent) — <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>, <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">How Google uses information from apps that use its services</a></li>
+      <li>Firebase Cloud Messaging (push notifications) — <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase privacy information</a></li>
+      <li>Sentry by Functional Software, Inc. (error reporting) — <a href="https://sentry.io/privacy/" rel="noopener">Sentry Privacy Policy</a></li>
+      <li>Railway (server and database hosting) — <a href="https://railway.com/legal/privacy" rel="noopener">Railway Privacy Policy</a></li>
+      <li>Resend (sending verification emails) — <a href="https://resend.com/legal/privacy-policy" rel="noopener">Resend Privacy Policy</a></li>
+      <li>Discord (private internal channel for inquiry and server error notifications) — <a href="https://discord.com/privacy" rel="noopener">Discord Privacy Policy</a></li>
+    </ul>
+
+    <h2>5. Advertising and consent</h2>
+    <p>The app shows ads from Google AdMob. To deliver and measure ads and prevent fraud, Google may collect your device's advertising ID, IP address, approximate location, device information and ad interactions. Personalized ads are shown only where permitted: users in the EEA, the UK and Switzerland are asked for consent through Google's consent form, and on iOS you are asked for tracking permission (App Tracking Transparency).</p>
+    <ul>
+      <li>Change your ad consent: <strong>Profile tab &gt; privacy icon at the top right</strong> (labeled "광고 개인정보 설정", Ad privacy settings; shown only where consent applies in your region).</li>
+      <li>Android: reset or delete your advertising ID in <strong>Settings &gt; Privacy &gt; Ads</strong> (menu names vary by device).</li>
+      <li>iOS: change tracking permission in <strong>Settings &gt; Privacy &amp; Security &gt; Tracking</strong>.</li>
+    </ul>
+
+    <h2>6. Permissions</h2>
+    <ul>
+      <li><strong>Internet:</strong> to connect to our server, load ads and send error reports.</li>
+      <li><strong>Notifications</strong> (Android 13+ and iOS): to show push notifications. You can turn them off in device settings.</li>
+      <li><strong>Photos</strong> (iOS photo library / Android photo picker): only when you choose a profile image.</li>
+      <li><strong>Advertising ID / tracking (iOS):</strong> for ads, as described in section 5.</li>
+    </ul>
+
+    <h2 id="delete-account">7. Retention and account deletion</h2>
+    <p>We keep your account data while your account exists. Push tokens are replaced when they change. Email verification codes expire after 5 minutes, and verification records are deleted automatically within 24 hours of creation. Inquiry copies and server error notices in our private Discord channel are deleted within [대표 확인 필요: Discord 문의 사본 보관 기간] after they are resolved, or sooner if you ask. Advertising data and crash reports are kept by Google and Sentry according to their own policies.</p>
+    <div class="box">
+      <p><strong>How to delete your account</strong></p>
+      <ul>
+        <li><strong>In the app:</strong> Profile tab &gt; Account settings (계정 설정) &gt; <em>Delete account (회원 탈퇴)</em>. Deletion is immediate and cannot be undone.</li>
+        <li><strong>Without the app:</strong> email [대표 확인 필요: 문의 이메일] from your sign-up email address with the subject "Delete my Strike Log account". We will delete it within [대표 확인 필요: 삭제 처리 기한] days.</li>
+      </ul>
+      <p><strong>Deleted:</strong> your account (email, password hash, nickname, profile image), bowling records and series, badges and attendance, club memberships, join requests, event participation, announcements you posted, game rooms, notifications, push tokens, inquiries and any email verification records for your email address.</p>
+      <p><strong>Not deleted automatically:</strong> copies of your inquiries in our private Discord channel. They are kept only for the period stated above, and we delete them when you ask by email (address above); if you ask us to delete your account by email, we delete these copies at the same time. Apart from this, nothing is kept on our server unless the law requires us to keep specific records. If you own a club with other members, you may be asked to transfer ownership before leaving it. Backups are overwritten in the normal backup cycle.</p>
+    </div>
+
+    <h2>8. Your rights and choices</h2>
+    <p>You can view and edit your profile in the app. You can ask us to access, correct, delete or stop processing your personal information by contacting us (section 13). If you are in the EEA or the UK, you also have rights under the GDPR, including data portability and objection, and you may complain to your local data protection authority.</p>
+
+    <h2>9. Children</h2>
+    <p>Strike Log is not directed at children under 13 (under 14 in Korea). We do not knowingly collect their personal information. If we learn that we have, we will delete it.</p>
+
+    <h2>10. Security</h2>
+    <p>Data is sent over HTTPS, passwords are stored as one-way hashes, and server access is limited. No method of transmission or storage is 100% secure, but we work to protect your information.</p>
+
+    <h2>11. International transfers</h2>
+    <p>Our server and service providers (Railway, Google, Sentry, Resend, Discord) may store and process data in countries other than yours, including the United States. Server location: [대표 확인 필요: 서버 국가·리전].</p>
+
+    <h2>12. Changes to this policy</h2>
+    <p>We will post any changes on this page and update the date above. For significant changes we will also notify you in the app before they take effect.</p>
+
+    <h2>13. Contact</h2>
+    <p>[대표 확인 필요: 개발자명]<br>Email: [대표 확인 필요: 문의 이메일]</p>
+  </section>
+
+  <!-- ============================ 한국어 ============================ -->
+  <section id="ko" lang="ko">
+    <h2 class="langhead">한국어</h2>
+
+    <h2>1. 운영자 및 적용 범위</h2>
+    <p>이 방침은 <strong>Strike Log</strong> 모바일 앱(Android 패키지 <code>com.strikelog.app</code> 및 iOS 버전)과 서버 <code>api.strikelog.xyz</code>에 적용됩니다. 앱 운영자는 [대표 확인 필요: 개발자명](이하 "운영자")입니다. Strike Log는 볼링 점수를 기록하고 통계를 보며 클럽과 실시간으로 점수를 공유하는 앱입니다.</p>
+
+    <h2>2. 요약</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>수집 항목</th><th>목적</th><th>제공·위탁 대상</th></tr></thead>
+      <tbody>
+        <tr><td>계정: 이메일, 비밀번호(해시), 닉네임, 선택 프로필 이미지</td><td>로그인·프로필</td><td>서버 호스팅 업체(위탁), Resend(인증 메일 발송). 닉네임·프로필 이미지는 클럽 멤버에게 공개</td></tr>
+        <tr><td>볼링 기록, 클럽, 배지</td><td>앱 기능 제공</td><td>서버 호스팅 업체. 클럽 점수는 클럽 멤버에게 공개</td></tr>
+        <tr><td>앱에서 보낸 문의</td><td>문의 답변</td><td>서버 호스팅 업체, Discord(운영자 내부 알림)</td></tr>
+        <tr><td>푸시 토큰</td><td>알림</td><td>Google(Firebase Cloud Messaging)</td></tr>
+        <tr><td>광고 ID, IP 주소, 기기·광고 상호작용 정보</td><td>광고</td><td>Google(AdMob)</td></tr>
+        <tr><td>비정상 종료·오류 보고, 기기·앱 정보</td><td>오류 수정</td><td>Sentry</td></tr>
+      </tbody>
+    </table></div>
+    <p>운영자는 개인정보를 판매하지 않습니다.</p>
+
+    <h2>3. 수집하는 개인정보와 목적</h2>
+    <h3>3.1 이용자가 직접 입력하는 정보</h3>
+    <ul>
+      <li><strong>계정:</strong> 이메일 주소, 비밀번호(단방향 해시로만 저장), 닉네임.</li>
+      <li><strong>이메일 인증:</strong> 회원가입이나 비밀번호 재설정 때 Resend를 통해 6자리 일회용 인증번호를 이메일로 보냅니다. 서버에는 이메일 주소, 인증번호, 인증 여부, 생성 시각을 저장합니다. 인증번호는 5분 뒤 만료됩니다. 모든 인증 기록은 사용 여부와 관계없이 생성 후 24시간 안에 자동으로 삭제되며, 회원 탈퇴 시 해당 이메일의 인증 기록도 모두 삭제됩니다.</li>
+      <li><strong>프로필 이미지(선택):</strong> 기기에서 고른 사진. 앱에서 압축한 뒤 서버에 저장합니다.</li>
+      <li><strong>볼링 기록:</strong> 점수·프레임, 플레이 날짜, 직접 입력한 볼링장 이름, 시리즈, 클럽 게임과 순위, 배지, 챌린지, 출석.</li>
+      <li><strong>클럽:</strong> 만들거나 가입한 클럽, 가입 신청, 역할(클럽장·운영진·멤버), 공지, 클럽 일정과 참여.</li>
+      <li><strong>문의:</strong> 앱에서 문의할 때 입력한 유형, 제목, 내용, 선택 회신 이메일. 빠른 답변을 위해 문의 사본이 사용자 ID, 닉네임, 일부를 가린 계정 이메일(예: "bo***@gmail.com"), 입력한 회신 이메일과 함께 운영자 전용 비공개 Discord 채널로 전달됩니다.</li>
+    </ul>
+    <h3>3.2 자동으로 수집되는 정보</h3>
+    <ul>
+      <li><strong>푸시 토큰:</strong> Firebase Cloud Messaging 토큰과 플랫폼(Android/iOS). 클럽 게임 알림, 최고 점수 갱신, 배지 획득 등의 알림을 보내기 위해 씁니다. 보낸 알림 내역은 서버에 저장됩니다.</li>
+      <li><strong>광고 정보:</strong> Google AdMob이 수집합니다. 5항을 보세요.</li>
+      <li><strong>비정상 종료·오류 보고:</strong> 앱이 비정상 종료되거나 오류가 나면 Sentry가 오류 내용, 기기 모델, OS·앱 버전, 성능 정보를 수집합니다. 이 보고에 계정 정보를 붙이지 않습니다.</li>
+    </ul>
+    <h3>3.3 다른 이용자에게 공개되는 정보</h3>
+    <p>클럽에 가입하면 같은 클럽 멤버가 이용자의 <strong>닉네임, 프로필 이미지, 클럽 게임 점수, 순위, 참여 내역</strong>을 볼 수 있습니다. 실시간 클럽 게임에서는 같은 게임 방의 참가자와 점수를 공유합니다.</p>
+
+    <h2>4. 외부 서비스 (개인정보 처리 위탁)</h2>
+    <p>운영자는 아래 업체에 개인정보 처리 업무를 위탁합니다. 각 업체는 위탁 목적 외로 개인정보를 쓰지 않습니다.</p>
+    <ul>
+      <li>Google LLC — AdMob·User Messaging Platform(광고 게재·동의 관리) — <a href="https://policies.google.com/privacy?hl=ko" rel="noopener">Google 개인정보처리방침</a>, <a href="https://policies.google.com/technologies/partner-sites?hl=ko" rel="noopener">Google의 파트너 앱 정보 사용 방식</a></li>
+      <li>Google LLC — Firebase Cloud Messaging(푸시 알림 전송) — <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase 개인정보 안내</a></li>
+      <li>Functional Software, Inc.(Sentry) — 오류 진단 로그 수집 — <a href="https://sentry.io/privacy/" rel="noopener">Sentry 개인정보처리방침</a></li>
+      <li>Railway Corp. — 서버·데이터베이스 호스팅 — <a href="https://railway.com/legal/privacy" rel="noopener">Railway 개인정보처리방침</a></li>
+      <li>Resend — 인증 메일 발송 — <a href="https://resend.com/legal/privacy-policy" rel="noopener">Resend 개인정보처리방침</a></li>
+      <li>Discord Inc. — 문의·서버 오류 내부 알림(운영자 전용 비공개 채널) — <a href="https://discord.com/privacy" rel="noopener">Discord 개인정보처리방침</a></li>
+    </ul>
+
+    <h2>5. 광고와 동의</h2>
+    <p>앱은 Google AdMob 광고를 표시합니다. 광고 제공·성과 측정·부정 행위 방지를 위해 Google이 기기의 광고 ID, IP 주소, 대략적인 위치, 기기 정보, 광고 상호작용 정보를 수집할 수 있습니다(자동 수집 장치). 맞춤 광고는 허용되는 경우에만 표시됩니다. EEA·영국·스위스 이용자에게는 Google 동의 화면으로 먼저 동의를 받고, iOS에서는 앱 추적 투명성(ATT) 허용 여부를 묻습니다.</p>
+    <ul>
+      <li>광고 동의 변경: <strong>프로필 탭 &gt; 오른쪽 위 개인정보 아이콘("광고 개인정보 설정")</strong>(동의가 적용되는 지역에서만 표시).</li>
+      <li>Android 광고 ID 재설정·삭제: <strong>설정 &gt; 개인정보 보호 &gt; 광고</strong>(기기마다 메뉴 이름이 다를 수 있음).</li>
+      <li>iOS 추적 허용 변경: <strong>설정 &gt; 개인정보 보호 및 보안 &gt; 추적</strong>.</li>
+    </ul>
+
+    <h2>6. 권한</h2>
+    <ul>
+      <li><strong>인터넷:</strong> 서버 연결, 광고 로딩, 오류 보고 전송.</li>
+      <li><strong>알림</strong>(Android 13 이상, iOS): 푸시 알림 표시. 기기 설정에서 끌 수 있습니다.</li>
+      <li><strong>사진</strong>(iOS 사진 보관함 / Android 사진 선택 도구): 프로필 이미지를 고를 때만 사용합니다.</li>
+      <li><strong>광고 ID / 추적(iOS):</strong> 5항의 광고 목적.</li>
+    </ul>
+
+    <h2 id="delete-account-ko">7. 보유 기간과 계정 삭제 (파기)</h2>
+    <p>계정 정보는 계정이 있는 동안 보유합니다. 푸시 토큰은 바뀌면 새 값으로 교체됩니다. 이메일 인증번호는 5분 뒤 만료되고, 인증 기록은 생성 후 24시간 안에 자동으로 삭제됩니다. 운영자 전용 Discord 채널의 문의 사본과 서버 오류 알림은 처리 완료 후 [대표 확인 필요: Discord 문의 사본 보관 기간] 안에 삭제하며, 요청하면 더 일찍 삭제합니다. 광고 정보와 오류 보고는 Google과 Sentry가 각 사의 정책에 따라 보관합니다.</p>
+    <div class="box">
+      <p><strong>계정 삭제 방법</strong></p>
+      <ul>
+        <li><strong>앱에서:</strong> 프로필 탭 &gt; 계정 설정 &gt; <em>회원 탈퇴</em>. 즉시 삭제되며 복구할 수 없습니다.</li>
+        <li><strong>앱 없이:</strong> 가입한 이메일 주소로 [대표 확인 필요: 문의 이메일]에 제목 "Strike Log 계정 삭제 요청"으로 메일을 보내 주세요. [대표 확인 필요: 삭제 처리 기한]일 안에 삭제합니다.</li>
+      </ul>
+      <p><strong>삭제되는 정보:</strong> 계정(이메일, 비밀번호 해시, 닉네임, 프로필 이미지), 볼링 기록·시리즈, 배지·출석, 클럽 멤버십, 가입 신청, 일정 참여, 작성한 공지, 게임 방, 알림 내역, 푸시 토큰, 문의, 해당 이메일의 인증 기록.</p>
+      <p><strong>자동으로 삭제되지 않는 정보:</strong> 운영자 전용 Discord 채널에 전달된 문의 사본. 위에 적은 기간 동안만 보관하며, 위 이메일로 요청하면 삭제합니다. 이메일로 계정 삭제를 요청하면 이 사본도 함께 삭제합니다. 이 밖에는 법령에 따라 보관해야 하는 기록이 있는 경우를 빼고 서버에 남기지 않습니다. 다른 멤버가 있는 클럽의 클럽장은 탈퇴 전에 클럽장을 넘겨야 할 수 있습니다. 백업은 정해진 백업 주기에 따라 덮어써집니다.</p>
+      <p><strong>파기 방법:</strong> 전자 파일 형태의 정보는 복구할 수 없도록 데이터베이스에서 삭제합니다.</p>
+    </div>
+
+    <h2>8. 이용자의 권리와 행사 방법</h2>
+    <p>앱에서 프로필을 보고 고칠 수 있습니다. 개인정보 열람·정정·삭제·처리정지는 13항의 연락처로 요청할 수 있으며, 운영자는 지체 없이 처리합니다. EEA·영국 이용자는 GDPR에 따른 이동권·반대권 등의 권리가 있으며, 거주국 감독기관에 민원을 낼 수 있습니다.</p>
+
+    <h2>9. 아동</h2>
+    <p>Strike Log는 만 14세 미만 아동(해외는 13세 미만)을 대상으로 하지 않으며, 아동의 개인정보를 알면서 수집하지 않습니다. 수집된 사실을 알게 되면 삭제합니다.</p>
+
+    <h2>10. 안전성 확보 조치</h2>
+    <p>데이터는 HTTPS로 전송하고, 비밀번호는 단방향 해시로 저장하며, 서버 접근 권한을 최소화합니다. 어떤 전송·저장 방식도 100% 안전하지는 않지만 개인정보 보호를 위해 노력합니다.</p>
+
+    <h2>11. 개인정보의 국외 이전</h2>
+    <p>서비스 제공(서버 운영·인증 메일·푸시 알림·광고·오류 진단·문의 처리)을 위해 아래와 같이 개인정보가 국외로 이전됩니다. 이전은 앱 이용 시 네트워크로 수시 전송되는 방식입니다. 이전을 원하지 않으면 회원 탈퇴로 거부할 수 있으나, 이 경우 서비스를 이용할 수 없습니다.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>이전받는 자</th><th>국가</th><th>이전 항목</th><th>보유 기간</th></tr></thead>
+      <tbody>
+        <tr><td>Railway Corp.</td><td>[대표 확인 필요: 서버 국가·리전]</td><td>계정, 볼링 기록, 클럽, 문의, 푸시 토큰</td><td>회원 탈퇴 시까지</td></tr>
+        <tr><td>Google LLC</td><td>미국 등</td><td>푸시 토큰, 광고 ID, IP 주소, 기기·광고 상호작용 정보</td><td>Google 정책에 따름</td></tr>
+        <tr><td>Functional Software, Inc.(Sentry)</td><td>미국 등</td><td>오류 내용, 기기·OS·앱 버전</td><td>Sentry 정책에 따름</td></tr>
+        <tr><td>Resend</td><td>미국 등</td><td>이메일 주소, 인증번호(메일 본문)</td><td>Resend 정책에 따름</td></tr>
+        <tr><td>Discord Inc.</td><td>미국 등</td><td>문의 내용, 사용자 ID, 닉네임, 일부를 가린 계정 이메일, 회신 이메일, 서버 오류 정보</td><td>문의 처리 완료 후 [대표 확인 필요: Discord 문의 사본 보관 기간] 또는 삭제 요청 시까지</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>12. 방침 변경</h2>
+    <p>변경 사항은 이 페이지에 게시하고 위 날짜를 갱신합니다. 중요한 변경은 시행 전에 앱 안에서도 알립니다.</p>
+
+    <h2>13. 문의 및 개인정보 보호책임자</h2>
+    <p>개인정보 보호책임자: [대표 확인 필요: 개인정보 보호책임자]<br>이메일: [대표 확인 필요: 문의 이메일]</p>
+  </section>
+
+  <footer><a href="../../">← All policies / 전체 방침 목록</a></footer>
+</main>
+</body>
+</html>

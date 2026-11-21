@@ -1,0 +1,8 @@
+# 도구 상태·캐시 (게시 대상 아님)
+.omc/
+__pycache__/
+.DS_Store
+# 비밀값은 이 저장소에 두지 않는다
+.env
+*.keystore
+*.jks
