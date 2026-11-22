@@ -19,6 +19,26 @@ FILES = [
     "plain-focus/privacy/index.html",
 ]
 PLACEHOLDER = re.compile(r"\[대표 확인 필요: [^\]]+\]")
+# Pages that are published but not yet in effect: must carry noindex + DRAFT
+# banner and must not be linked from the index page.
+DRAFTS = ["strike-log/privacy/index.html", "bounce-tower/privacy/index.html"]
+# Sensitive / internal strings that must never reach the public repo.
+# Some literals are split so this file does not match itself.
+SECRET_PATTERNS = {
+    "company mail/domain": re.compile("imsmobil" + "ity", re.I),
+    "local user path": re.compile(r"/Users/|C:\\\\Users\\\\|/home/[a-z]"),
+    "private key": re.compile("-----BEGIN [A-Z ]*PRIVATE" + " KEY-----"),
+    "Google API key": re.compile(r"AIza[0-9A-Za-z_\-]{35}"),
+    "GitHub token": re.compile(r"gh[pousr]_[0-9A-Za-z]{30,}"),
+    "AWS key": re.compile(r"AKIA[0-9A-Z]{16}"),
+    "Slack/Discord webhook": re.compile(r"hooks\.slack\.com/services|discord(?:app)?\.com/api/webhooks"),
+    "JWT": re.compile(r"eyJ[0-9A-Za-z_\-]{10,}\.eyJ[0-9A-Za-z_\-]{10,}\."),
+    "AdMob real unit id": re.compile(r"ca-app-pub-(?!3940256099942544)\d{16}"),
+    "password assignment": re.compile(r"(?i)(password|passwd|secret|token)\s*[:=]\s*['\"][^'\"]{6,}"),
+    "private IP": re.compile(r"\b(?:10|192\.168|172\.(?:1[6-9]|2\d|3[01]))\.\d{1,3}\.\d{1,3}"),
+}
+SKIP_DIRS = {".git", ".omc", "__pycache__"}
+FORBIDDEN_FILES = re.compile(r"(\.env|\.jks|\.keystore|key\.properties|google-services\.json|GoogleService-Info\.plist)$")
 
 
 class Page(HTMLParser):
@@ -72,6 +92,9 @@ def check(path):
         if href.startswith("http"):
             if rel != "noopener":
                 errs.append(f"missing rel=noopener: {href}")
+        elif href.startswith("mailto:"):
+            if not re.fullmatch(r"mailto:[^@\s]+@[^@\s]+\.[a-z]{2,}", href):
+                errs.append(f"bad mailto {href}")
         elif href.startswith("#"):
             if href[1:] not in p.ids:
                 errs.append(f"broken anchor {href}")
@@ -87,17 +110,65 @@ def check(path):
     return p, errs, PLACEHOLDER.findall(src)
 
 
+def scan_secrets():
+    """Scan every file that would be published (everything except SKIP_DIRS)."""
+    errs, scanned = [], 0
+    for root, dirs, files in os.walk("."):
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+        for name in files:
+            path = os.path.join(root, name)
+            if FORBIDDEN_FILES.search(name):
+                errs.append(f"forbidden file {path}")
+                continue
+            try:
+                text = open(path, encoding="utf-8").read()
+            except UnicodeDecodeError:
+                errs.append(f"binary file {path}")
+                continue
+            scanned += 1
+            for label, pat in SECRET_PATTERNS.items():
+                m = pat.search(text)
+                if m:
+                    errs.append(f"{label} in {path}: {m.group(0)[:40]!r}")
+    return scanned, errs
+
+
+def check_drafts():
+    errs = []
+    index = open("index.html", encoding="utf-8").read()
+    for f in DRAFTS:
+        src = open(f, encoding="utf-8").read()
+        if not re.search(r'<meta name="robots" content="noindex">', src):
+            errs.append(f"{f}: missing noindex")
+        if "DRAFT — not yet in effect" not in src:
+            errs.append(f"{f}: missing DRAFT banner")
+        link = f.replace("index.html", "")
+        if f'href="{link}"' in index:
+            errs.append(f"index.html links draft page {link}")
+    return errs
+
+
 def main():
     ok = True
     all_ph = {}
     for f in FILES:
         p, errs, ph = check(f)
+        if f not in DRAFTS and ph:
+            errs.append(f"{len(ph)} placeholder(s) left in a published page")
         for x in ph:
             all_ph[x] = all_ph.get(x, 0) + 1
         status = "OK" if not errs else "; ".join(errs)
         print(f"{f}: sections en={p.h2['en']} ko={p.h2['ko']} links={len(p.hrefs)} placeholders={len(ph)} -> {status}")
         ok = ok and not errs
-    print("\nPlaceholders to fill before publishing:")
+    derrs = check_drafts()
+    print(f"\nDraft isolation ({len(DRAFTS)} pages): " + ("OK" if not derrs else "; ".join(derrs)))
+    ok = ok and not derrs
+    scanned, serrs = scan_secrets()
+    print(f"Secret/internal-info scan ({scanned} files): " + ("OK" if not serrs else ""))
+    for e in serrs:
+        print(f"  - {e}")
+    ok = ok and not serrs
+    print("\nPlaceholders to fill before publishing (draft pages only):")
     for k, v in sorted(all_ph.items()):
         print(f"  {v:3d}  {k}")
     print("\nALL OK" if ok else "\nFAILED")
